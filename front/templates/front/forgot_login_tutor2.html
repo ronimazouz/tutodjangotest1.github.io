@@ -1,0 +1,15 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+    <form id="form-login" class="register-form">
+      {% csrf_token %}
+        <h2 class="text-center" id="heading-confirmation">Mot de Passe Oublié</h2>
+        <p class="text-center" id="paragraph-Subscription-Confirmation" style="font-size: 16px;margin-bottom: 50px;"><br>Un email de&nbsp;réinitialisation vient de vous&nbsp;être envoyé à l’adresse mail que vous nous avez fourni.&nbsp;<br>Veuillez cliquer sur le lien dans le mail pour&nbsp;réinitialiser votre mot de passe.</p>
+        <button class="btn btn-primary"
+            id="bouton-confirmation" style="width: 255px;height: 60px;font-size: 25px;background-color: #517ca3;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);" onclick=location.href="{% url 'login_tutor' %}" ;
+            type="button">Accueil</button>
+    </form>
+</div>
+
+{% endblock %}

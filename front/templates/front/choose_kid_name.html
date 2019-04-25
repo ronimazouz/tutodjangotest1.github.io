@@ -1,0 +1,10 @@
+<!-- TODO add loop for kid first name -->
+
+
+{% extends "front/base_back.html" %}
+
+{% block content %}
+    <h2 class="text-center" style="padding-top: 90px;padding-bottom: 30px;">Qui a besoin d&#39;aide?</h2>
+
+    <div id="div-kid-Name"><button style="margin: auto;" class="btn btn-primary shadow-lg" onclick=location.href="{% url 'choose_subject' %}" ; type="button" id="Kid-name">{{ kid.name }}<br /></button></div>
+{% endblock %}

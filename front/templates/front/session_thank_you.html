@@ -1,0 +1,56 @@
+<!-- TODO add Review-rating-Star-Review-Button.js -->
+<!-- TODO add tuto-number-of-mins -->
+
+
+{% extends "front/base_nomenu.html" %}
+
+{% block content %}
+<img style="display: block;margin-left: auto;margin-right: auto;" src="assets/img/logo.png">
+<h3 class="text-center" id="heading-thank-you">Merci!<br>Votre cours a &nbsp;duré {{ tuto_mins }}.<br>Nous espérons qu'il s'est bien&nbsp;déroulé.</h3>
+<div id="div-rating-system"><div class="cont">
+<div class="title">
+<h4>Notez votre Tuteur</h4>
+</div>
+<div class="stars">
+<form action="">
+<input class="star star-5" id="star-5" type="radio" onclick="showDiv()" name="star"/>
+<label class="star star-5" onclick="showDiv()" for="star-5"></label>
+<input class="star star-4" id="star-4" type="radio" onclick="showDiv()" name="star"/>
+<label class="star star-4" onclick="showDiv()" for="star-4"></label>
+<input class="star star-3" id="star-3" type="radio" onclick="showDiv()" name="star"/>
+<label class="star star-3" onclick="showDiv()" for="star-3"></label>
+<input class="star star-2" id="star-2" type="radio" onclick="showDiv()" name="star"/>
+<label class="star star-2" onclick="showDiv()" for="star-2"></label>
+<input class="star star-1" id="star-1" type="radio" onclick="showDiv()" name="star"/>
+<label class="star star-1" onclick="showDiv()" for="star-1"></label>
+</form>
+</div>
+</div>
+<div id="div-report-problem"><a data-toggle="modal" style="font-weight: 200;font-size: 16px;" href="#modal-report-problem">Signaler un problème avec ce tuto</a></div>
+<div id="div-show-accueil"><button class="btn btn-primary shadow" onclick=location.href="{% url 'choose_kid_name' %}" type="button" id="bouton-accueil">Valider</button></div>
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-report-problem">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: rgb(10,65,88);">Signaler un problème</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                <label
+                    style="color: rgb(10,65,88);">Sujet: &nbsp;</label><span style="color: rgb(10,65,88);border-bottom: solid 1px rgb(10,65,88);">Problème avec le tuto du {tuto-date, avec {tutor-first-name}</span><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+            <div
+                class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+    </div>
+</div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                <label
+                    style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+            <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

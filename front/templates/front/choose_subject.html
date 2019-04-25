@@ -1,0 +1,61 @@
+<!-- TODO loop for topic name and picture, careful cause you have one column on phone view and 2 columns on computer view-->
+
+
+{% extends "front/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<h2 class="text-center page-title">J'ai besoin d'aide en:</h2>
+
+<div class="row" id="row-choose-subject" style="height: 100px;margin-right: 0;margin-bottom: 0;margin-left: 0;">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;position: relative;">
+    <figure class="figure snip1573" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" onclick=location.href="{% url 'please_wait' %}" style="background-image: url('static/img/choose_subject/camcorder2.png');"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;"><img class="float-none" src="{% static 'img/choose_subject/francais.png' %}" id="image-choose-subject-1">
+        <h3 id="heading-choose-subject-1">Français</h3>
+      </div>
+    </figure>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;margin-right: 0;margin-left: 0;">
+    <figure class="figure snip1573" style="margin-bottom: 0px;" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" data-action="please-wait.html"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;">
+        <h3 id="heading-choose-subject-1" style="color: rgb(255,255,255);height: auto;">Maths</h3><img class="float-none" src="{% static 'img/choose_subject/maths.png' %}" id="image-choose-subject-1">
+      </div>
+    </figure>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;margin-right: 0;margin-left: 0;">
+    <figure class="figure snip1573" style="margin-bottom: 0px;" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" data-action="please-wait.html"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;">
+        <h3 id="heading-choose-subject-1" style="color: rgb(255,255,255);height: auto;">Physique-Chimie</h3><img class="float-none" src="{% static 'img/choose_subject/physics.png' %}" id="image-choose-subject-1">
+      </div>
+    </figure>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;margin-right: 0;margin-left: 0;">
+    <figure class="figure snip1573" style="margin-bottom: 0px;" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" data-action="please-wait.html"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;">
+        <h3 id="heading-choose-subject-1" style="color: rgb(255,255,255);height: auto;">Sciences de la vie et de la terre</h3><img class="float-none" src="{% static 'img/choose_subject/biology.png' %}" id="image-choose-subject-1">
+      </div>
+    </figure>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;margin-right: 0;margin-left: 0;">
+    <figure class="figure snip1573" style="margin-bottom: 0px;" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" data-action="please-wait.html"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;">
+        <h3 id="heading-choose-subject-1" style="color: rgb(255,255,255);height: auto;">Histoire-Géo</h3><img class="float-none" src="{% static 'img/choose_subject/Histoire-geo.png' %}" id="image-choose-subject-1">
+      </div>
+    </figure>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="column-choose-subject-1" style="height: 100px;margin-right: 0;margin-left: 0;">
+    <figure class="figure snip1573" style="margin-bottom: 0px;" data-animated-button="">
+      <figcaption class="figure-caption" style="width: auto;height: auto;">TUTO<button class="btn btn-primary" type="button" id="button-call" data-action="please-wait.html"></button></figcaption><a href="#"></a>
+      <div id="div-choose-subject-1" class="div-list" style="height: 100%;width: 100%;">
+        <h3 id="heading-choose-subject-1" style="color: rgb(255,255,255);height: auto;">Anglais</h3><img class="float-none" src="{% static 'img/choose_subject/english.png' %}" id="image-choose-subject-1">
+      </div>
+    </figure>
+  </div>
+</div>
+{% endblock %}

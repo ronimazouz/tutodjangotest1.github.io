@@ -1,0 +1,28 @@
+<!-- TODO create loop for payment date, amount -->
+
+
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+    <h1 class="text-center page-title">Historique de vos factures</h1>
+    <div id="div-scroll">
+        <div id="div-histo-payments" class="div-histo div-list" style="background-color: rgba(0,0,0,0.5);height: 100px;">
+            <h1 class="text-center" id="heading-payments-details" style="color: rgb(255,255,255);">{payment-date}-{amount}</h1>
+        </div>
+    </div>
+    <div id="div-show-accueil"><button class="btn btn-primary shadow" onclick=location.href="choose_kid_name.html" type="button" id="bouton-accueil">Valider</button></div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                    <label
+                        style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

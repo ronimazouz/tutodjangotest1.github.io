@@ -1,0 +1,68 @@
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+#side-menu {
+  display: none;
+  position: fixed;
+  min-width: 270px;
+  top: 0;
+  right: -300px;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 500;
+  /*background: rgba(0,0,0,0.6);*/
+  padding: 20px 20px 20px 20px;
+  transition: 0.4s;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.side-menu-visible #side-menu {
+  transform: translateX(-300px);
+}
+
+#side-menu .contents {
+  margin-top: 70px;
+}
+
+#side-menu .nav-link {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 400;
+  padding: 20px 0;
+  float: left;
+  font-size: 3vh;
+}
+
+#side-menu .nav-link:hover {
+  opacity: .8;
+}
+
+#side-menu .close {
+  font-size: 60px;
+  font-weight: 200;
+  color: #ffffff;
+  opacity: 1;
+  margin-top: -15px;
+}
+
+button.close {
+  margin-right: 15px;
+}
+
+.side-menu-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 100;
+  display: none;
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  -o-backdrop-filter: blur(7px);
+  moz-backdrop-filter: blur(7px);
+  ms-backdrop-filter: blur(7px);
+}
+

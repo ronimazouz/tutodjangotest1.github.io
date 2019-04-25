@@ -1,0 +1,59 @@
+<!-- add loop for levels -->
+
+
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+  <form method="post" class="register-form">
+    {% csrf_token %}
+    <h2 class="text-center">Ajouter un élève&nbsp;à votre compte&nbsp;<br></h2>
+    <h2 class="text-center form-heading"></h2>
+    <h4 class="text-center form-subheading">Vos Informations<br></h4>
+    <label class="form-label">Nom&nbsp;de l'élève</label>
+    <input class="form-control form-input" type="text" inputmode="latin-name" required />
+    <label class="form-label">Prénom&nbsp;de l'élève</label>
+    <input class="form-control form-input" type="text" inputmode="latin-name" required="" />
+    <label class="form-label">Date de naissance</label>
+    <input class="form-control form-input" required="" type="date">
+    <label class="form-label">Classe</label>
+    <select class="form-control form-input" required="">
+      <optgroup label="">
+        <option value="" selected="">CP</option>
+        <option value="">CE1</option>
+        <option value="">CE2</option>
+        <option value="">CM1</option>
+        <option value="">CM2</option>
+        <option value="">6ÈME</option>
+        <option value="">5ÈME</option>
+        <option value="">4ÈME</option>
+        <option value="">3ÈME</option>
+      </optgroup>
+    </select>
+    <label class="form-label">Email&nbsp;de l'élève (ou celui du parent)</label>
+    <input class="form-control form-input" type="text" required="" inputmode="email">
+    <label class="form-label">Telephone Mobile&nbsp;de l'élève (ou celui du parent)</label>
+    <input class="form-control form-input" type="tel">
+    <label class="form-label">Créer le mot de passe du compte élève</label>
+    <input class="form-control" type="password" placeholder="Mot de passe élève" style="font-size: 16px;">
+    <input class="form-control" type="password" placeholder="Confirmation du mot de passe" style="font-size: 16px;">
+    <div id="Submit-buttons" class="div-2buttons" style="height: 52px;text-align: center;margin-top: 30px;"><button class="btn btn-primary" type="submit" id="Button-Ajouter" onclick=location.href="{% url 'choose_kid_name' %}" ;
+        style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;text-align: center;float: none;line-height: 25px;">Ajouter l&#39;élève</button></div>
+  </form>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email"
+            style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+          <label style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i
+              class="fa fa-send"></i></button></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

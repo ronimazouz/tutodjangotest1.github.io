@@ -1,0 +1,29 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+<form method="post" class="register-form">
+  {% csrf_token %}
+<h2 class="text-center">Créer un compte</h2>
+<div class="form-group"><input class="form-control" type="email" name="email" required placeholder="Email" style="background-color: rgba(255,255,255,0);color: white;" /></div>
+<div class="form-group"><input class="form-control" type="password" name="password" required placeholder="Mot de passe" style="background-color: rgba(255,255,255,0);color: white;" /></div>
+<div class="form-group"><input class="form-control" type="password" name="password-repeat" required placeholder="Confirmer mot de passe" style="background-color: rgba(247,249,252,0);color: white;" /></div>
+<div class="form-group">
+    <div class="form-check"><input class="form-check-input" type="checkbox" name="checkbox" value="check" id="formCheck-1" required /><label class="form-check-label" for="formCheck-1" style="font-size: 16px;">J&#39;accèpte <a href="{% url 'terms_conditions_parents' %}" style="font-size: 16px;color: #517ca3;">les termes et conditions.</a></label></div>
+</div>
+<div class="form-group f-group" id="form-group-inscrire-already"><button class="btn btn-primary btn-block" type="submit" onclick="if(!this.form.checkbox.checked){alert('Vous devez accepter les Termes et  Conditions.');return false}" id="bouton-inscrire">S&#39;inscrire</button><a class="text-center already" href="{% url 'login' %}" id="link-already" style="color: rgb(255,255,255);font-size: 16px;">Vous avez déja un compte?  Connectez-vous</a></div>
+</form>
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                <label
+                    style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+            <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

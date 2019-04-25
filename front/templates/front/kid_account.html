@@ -1,0 +1,39 @@
+<!-- TODO create loop for kid first name, number of used minutes, and tuto details (tuto date, tutor, topic, duration) -->
+<!-- TODO create loop for img src tutors -->
+
+{% extends "front/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div style="text-align: center;">
+  <h1 class="text-center page-title" style="color: rgb(255,255,255);margin-bottom: 0px;">{kid-name}</h1><a style="font-size: 16px;color: rgb(255,255,255);font-family: Lato" href="{% url 'edit_kid_info' %}">Modifier</a>
+  <h5 class="text-center" style="margin-top: 30px;">Total minutes ce mois ci:</h5>
+  <h5 class="text-center" style="color: rgb(255,255,255);margin-bottom: 50px;"><span>13</span>&nbsp;minutes</h5>
+  <h3 class="text-center" id="heading-histo-tutos" style="color: rgb(255,255,255);margin-bottom: 0px;padding-bottom: 15px;font-weight: 200;">Historique des Tutos:</h3>
+  <div id="div-scroll" style="position: relative;z-index: 1;">
+    <div id="div-histo-tutos" class="div-list div-histo" ; onclick=location.href="{% url 'tuto_details' %}" style="background-color: rgba(0,0,0,0.5);height: 100px;position: relative;z-index: 15;cursor: pointer;"><img src="{% static '/img/kid_account/tutor.jpg' %}"
+        class="img-tutor" /><img id="image-arrow" src="{% static '/img/kid_account/chevron-right.png' %}"></img>
+      <h1 id="heading-tutos-details" style="color: rgb(255,255,255);">le 27 janvier 2019-Mathieu-Anglais-7 minutes</h1>
+    </div>
+    <div id="div-histo-tutos" class="div-list div-histo" ; onclick=location.href="{% url 'tuto_details' %}" style="background-color: rgba(0,0,0,0.5);height: 100px;position: relative;z-index: 15;cursor: pointer;"><img src="{% static '/img/kid_account/tutor-2.jpg' %}"
+        class="img-tutor" /><img id="image-arrow" src="{% static '/img/kid_account/chevron-right.png' %}"></img>
+      <h1 id="heading-tutos-details" style="color: rgb(255,255,255);">le 27 janvier 2019-Mathieu-Anglais-7 minutes</h1>
+    </div>
+  </div>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email"
+            style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+          <label style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i
+              class="fa fa-send"></i></button></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

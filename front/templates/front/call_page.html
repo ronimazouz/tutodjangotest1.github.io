@@ -1,0 +1,45 @@
+<!-- TODO display span-alert with chrono when only 3mns and less -->
+<!-- TODO replace img ezgif.com with actual video -->
+<!-- TODO replace img student.jpg with video of self -->
+<!-- TODO replace img messenger.jpg with actual messenger -->
+
+{% extends "front/base_nomenu.html" %}
+
+{% load staticfiles %}
+
+{% block header %}
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="{% static 'js/webrtc.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="div-margin"></div>
+<div id="div-video-big" style="text-align: center;border: none;">
+  <!--<img src="{% static 'img/call_page/ezgif.com-crop.gif' %}" style="height: 100%;width: inherit;">--!>
+  <video id="remoteVideo" autoplay style="height: 100%; width: inherit;"></video>
+  <div id="video-call-bottom">
+    <div id="div-call-button"><a class="btn btn-primary" role="button" href="{% url 'session_thank_you' %}" id="bouton-call"
+        style="line-height: 65px;background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #e53935), color-stop(1, #e35d5b));"><img src="{% static 'img/call_page/phone.png' %}" style="width: 70%;"></a></div>
+    <!--<div id="div-video-small"><img src="/student.jpg" style="width: 100%;height: 100%;"></div>--!>
+    <div id="div-video-small"><video id="localVideo" autoplay style="width: 100%; height: 100%;"></video></div>
+  </div>
+</div>
+<div id="div-video-buttons" style="padding-top: 10px;"><button class="btn btn-primary" type="button" onclick="fullscreen() ; changeimg2()" id="bouton-video-expand"><img src="{% static 'img/call_page/maximize.png' %}" ;="" class="icon-bouton-video"
+      id="expand"></button><span id="span-alert">Il vous reste {{left_mins}} sur votre forfait</span></div>
+<div id="div-video-buttons"><button class="btn btn-primary" type="button" id="bouton-flip-cam"><img src="{% static 'img/call_page/flip-camera.png' %}" class="icon-bouton-video"></button></div>
+<div id="div-video-buttons"><button class="btn btn-primary" type="button" id="bouton-record" onclick="changeimg()"><img src="{% static 'img/call_page/camcorder.png' %}" id="icon-record" class="icon-bouton-video"></button></div>
+<div id="div-video-buttons"><button class="btn btn-primary" type="button" onclick="changeimg3()" id="bouton-cam-cut"><img src="{% static 'img/call_page/cam-on.png' %}" id="cam-cut" class="icon-bouton-video"></button></div>
+<div id="div-video-buttons"><button class="btn btn-primary" type="button" onclick="changeimg4()" id="bouton-mic-cut"><img src="{% static 'img/call_page/mic-on.png' %}" id="mic-cut" class="icon-bouton-video"></button></div>
+<div id="div-messenger"><img src="{% static '/img/call_page/messenger.jpg' %}" style="width: 100%;height: 100%;"></div>
+
+
+<div id="screenleapDiv" style="position:fixed;right:1px;bottom:1px;visibility:hidden;width:1px;height:1px" installed="true" sharing="false" eventlisteneradded="true"></div>
+<div class="side-menu-overlay" style="display: none;"></div>
+<div id="side-menu" style="display: none;"><button class="close"><span aria-hidden="true">×</span></button>
+  <div class="contents"></div>
+</div>
+<input type="button" id="start" onclick="start(true)" value="Start Video"></input>
+<script type="text/javascript">
+    pageReady();
+</script>
+{% endblock %}

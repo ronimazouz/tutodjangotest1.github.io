@@ -1,0 +1,340 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<form id="register-2" class="register-form" method="post">
+  {% csrf_token %}
+  <h2 class="text-center form-heading">Créez votre compte Tuteur (2/3)<br></h2>
+  <h2 class="text-center form-subheading">Vos Compétences<br></h2><label class="form-label">Nombre&nbsp;d'années&nbsp;d'expérience dans le Soutien Scolaire:&nbsp;</label><select class="form-control form-input" required="">
+    <option value="">0</option>
+    <option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+    <option value="">4</option>
+    <option value="">5</option>
+    <option value="">6</option>
+    <option value="">7</option>
+    <option value="">8</option>
+    <option value="">9</option>
+    <option value="">10+</option>
+  </select>
+  <label class="form-label" style="margin-bottom: 10px;">Les niveaux que vous souhaiter enseigner :</label>
+  <div id="div-select-niveau" style="width: 100%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: auto;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;">De la classe de:</label><select
+      class="form-control form-input" id="Select-niveau">
+      <optgroup label="">{% for level in levels %}<option>{{ level.name }}</option>{% endfor %}</optgroup>
+    </select>
+    <span style="font-size: 20px;float: left;padding-top: 4px;">à:</span><select class="form-control form-input" id="Select-niveau">
+      <optgroup label="">{% for level in levels %}<option>{{ level.name }}</option>{% endfor %}</optgroup>
+    </select></div>
+  <label class="form-label" style="margin-bottom: 20px;">Les matières que vous souhaiter enseigner :</label>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Francais &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp;</label></div>
+    </div>
+    <div class="col">
+      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Sciences de la Vie et de la Terre</label></div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Histoire-Geographie</label></div>
+    </div>
+    <div class="col">
+      <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">Physique-Chimie</label></div>
+    </div>
+  </div>
+  <h5 class="form-subheading" style="margin-top: 50px;">Vos Disponibilités&nbsp;</h5>
+  <h6 style="margin-bottom: 15px;width: auto;">(à&nbsp;titre indicatif pour notre planning)</h6>
+  <div id="div-select-horaires">
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Lundi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Mardi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Mercredi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Jeudi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Vendredi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Samedi:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+    <div style="width: 110%;height: 50px;"><label class="form-label" style="font-size: 20px;float: left;width: 40%;height: 30px;margin-bottom: 0px;margin-top: 0px;padding-top: 4px;line-height: 38px;">Dimanche:&nbsp;</label><select
+        class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select>
+      <span style="font-size: 20px;margin-left: 15px;float: left;padding-top: 4px;line-height: 38px;">à: &nbsp;</span><select class="form-control form-input" id="Select-horaires">
+        <option value="" selected="">8h</option>
+        <option value="">9h</option>
+        <option value="">10h</option>
+        <option value="">11h</option>
+        <option value="">Midi</option>
+        <option value="">13h</option>
+        <option value="">14h</option>
+        <option value="">15h</option>
+        <option value="">16h</option>
+        <option value="">17h</option>
+        <option value="">18h</option>
+        <option value="">19h</option>
+        <option value="">20h</option>
+        <option value="">21h</option>
+        <option value="">22h</option>
+        <option value="">23h</option>
+        <option value="">Minuit</option>
+      </select></div>
+  </div>
+  <h5 class="form-subheading" style="margin-top: 50px;">Votre photo:&nbsp;</h5>
+  <div>
+    <div class="avatar-upload">
+      <div class="avatar-edit">
+        <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+        <label for="imageUpload"></label>
+      </div>
+      <div class="avatar-preview">
+        <div id="imagePreview" style="background-color:white">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Submit-buttons" class="div-2buttons" style="height: 52px;text-align: center;margin-top: 30px;"><button class="btn btn-primary" type="button" id="Button-Ajouter" onclick=location.href="{% url 'edit_tutor_info_3' %}" ;
+        style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;text-align: center;float: none;line-height: 25px;">Suivant</button>
+  </div>
+</form>
+{% endblock %}

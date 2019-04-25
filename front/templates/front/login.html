@@ -1,0 +1,12 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<form method="post" class="register-form" style="text-align: center;">
+  {% csrf_token %}
+    <h2 class="text-center" style="padding-bottom: 60px;">Accéder&nbsp;à mon compte<br></h2>
+    <div class="form-group" style="font-size: 35px;"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Mot de passe"></div>
+    <button class="btn btn-primary btn-block shadow-lg" type="button" style="height: 60px;padding-bottom: 11px;margin-top: 55px;box-shadow: 20px 38px 34px -26px;background-color: #517ca3;font-size: 20px;margin-bottom: 10px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);" onclick=location.href="{% url 'choose_kid_name' %}" ; >Connexion</button>
+    <a href="{% url 'forgot_login1' %}" id="forgot" class="forgot" style="color: rgb(255,255,255);font-size: 15px;">Email ou mot de passe oublié?</a>
+</form>
+{% endblock %}

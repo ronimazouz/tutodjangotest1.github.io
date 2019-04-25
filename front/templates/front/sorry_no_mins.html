@@ -1,0 +1,27 @@
+{% extends "front/base_back.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div>
+<div id="div-img-sorry" style="margin-top: 100px"><img id="sorry" src="{% static '/img/sorry_no_mins/sorry.png' %}">
+    <h5 id="Heading-sorry-mins" style="color: rgb(255,255,255);padding-left: 10vw;padding-right: 5vw;padding-top: 3vw;padding-bottom: 3vw;font-weight: 200;">Nous sommes désolés mais vous n'avez plus de minutes sur votre forfait.<br></h5>
+    <div class="row" id="Row-no-money">
+        <div class="col-md-12 col-lg-12 col-xl-12"><button class="btn btn-primary shadow" id="bouton-ajouter-mins" onclick=location.href="{% url 'payment_page' %}" ; type="button">Ajouter des minutes</button></div>
+        <div class="col-md-12 col-lg-12 col-xl-12"><button class="btn btn-primary shadow" id="bouton-accueil" onclick=location.href="{% url 'choose_kid_name' %}" ; type="button">Accueil</button></div>
+    </div>
+</div>
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                <label
+                    style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+            <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

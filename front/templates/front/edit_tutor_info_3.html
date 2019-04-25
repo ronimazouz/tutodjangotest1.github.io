@@ -1,0 +1,40 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<form class="register-form" method="post">
+  {% csrf_token %}
+  <h2 class="text-center form-heading">Editer vos Informations (3/3)<br></h2>
+  <h2 class="text-center form-subheading">Votre Entreprise<br></h2><label class="form-label">Nom de votre Entreprise</label><input class="form-control form-input" type="text" inputmode="latin-name"><label class="form-label">Forme
+    Juridique</label>
+  <select class="form-control form-input">
+    <optgroup label="">
+      <option value="">Je n'ai pas d'entreprise</option>
+      <option value="">Entreprise Individuelle</option>
+      <option value="">EIRL</option>
+      <option value="">EURL</option>
+      <option value="">SARL</option>
+      <option value="">SAS</option>
+      <option value="">SASU</option>
+    </optgroup>
+  </select>
+  <label class="form-label">Adresse de l'Entreprise</label><input class="form-control form-input" type="text"><label class="form-label">Code Postal</label><input class="form-control form-input" type="text" inputmode="numeric"><label
+    class="form-label">Ville</label>
+  <input class="form-control form-input" type="text" inputmode="latin-name"><label class="form-label"></label><input class="form-control form-input" type="tel">
+  <div id="Submit-buttons" class="div-2buttons" style="height: 52px;text-align: center;margin-top: 30px;"><button class="btn btn-primary" type="button" id="Button-Ajouter" onclick=location.href="{% url 'tutor_account' %}" ;
+        style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;text-align: center;float: none;line-height: 25px;">Modifier</button>
+  </div>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-thank-you">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: rgb(10,65,88);">Confirmation d'Inscription</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body" style="color: rgb(10,65,88);">
+          <p>Merci!<br>Nous allons revoir vos informations et vous contacterons dans les plus brefs délais.</p>
+        </div>
+        <div class="modal-footer"><button class="btn btn-primary" type="button">Accueil</button></div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

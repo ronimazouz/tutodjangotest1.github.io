@@ -1,0 +1,38 @@
+<!-- TODO create loop for total-given-mins, total earned euros -->
+<!-- TODO create loop for kid first name, date, topic, tuto-mins, -->
+
+
+{% extends "front/base.html" %}
+
+{% block content %}
+    <div id="div-availability" class="div-2elements" style="height: 40px;margin-top: 15vh;margin-bottom: 5px;min-width: 200px;">
+        <h3 class="text-left" id="heading-availability" style="color: rgb(255,255,255);width: 70%;float: left;font-family: lato;">Disponible:</h3><label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label></div>
+    <h6 class="text-center" style="font-size: 20px;">(Vous devez vous mettre sur la position disponible pour recevoir des requêtes)</h6>
+    <div style="text-align: center;">
+        <h2 class="text-center page-title" style="padding-top: 60px;margin-bottom: 0px;">Votre Compte&nbsp;</h2><a style="font-size: 16px;" href="{% url 'edit_tutor_info_1' %}">Modifier vos Informations</a></div>
+    <h5 class="text-center" style="color: rgb(255,255,255);margin-bottom: 0px;margin-left: 10vw;margin-right: 10vw;margin-top: 30px;">Vous avez donné {minutes} minutes ({minutes/60 &nbsp;heures) de cours ce mois-ci pour un total de:</h5>
+    <h5 class="text-center" style="color: rgb(255,255,255);margin-bottom: 30px;">{Euros €}</h5>
+    <div style="text-align: center;margin-bottom: 30px;font-size: 20px;"><a class="link" style="color: white;" href="{% url 'tutor_invoice_history' %}">Historique de vos factures</a></div>
+    <h3 class="text-center" id="heading-histo-tutos" style="color: rgb(255,255,255);margin-bottom: 0px;padding-bottom: 10px;">Historique de vos Tutos:</h3>
+    <div id="div-scroll">
+        <div id="div-histo-tutos" class="div-list div-histo" style="background-color: rgba(0,0,0,0.5);height: 100px;text-align: center;">
+            <h1 id="heading-tutos-details-tutor" style="color: rgb(255,255,255);">{kid-first-name-{date}-{matiere}-{tuto-mins} minutes</h1>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                    <label
+                        style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

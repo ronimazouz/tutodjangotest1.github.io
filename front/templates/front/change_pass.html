@@ -1,0 +1,33 @@
+<!-- add onclick change password -->
+
+
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+<form class="register-form" style="text-align: center;" method="post">
+    {% csrf_token %}
+<h2 class="sr-only">Login Form</h2>
+<h2 class="text-center" style="padding-bottom: 60px;">Changer Votre Mot de Passe<br></h2>
+<div class="form-group"><input class="form-control" type="password" name="password" placeholder="Mot de passe actuel" style="font-size: 18px;margin-bottom: 30px;"><input class="form-control" type="password" name="password"
+  placeholder="Nouveau mot de passe" style="font-size: 18px;">
+<input class="form-control" type="password" name="password" placeholder="Confirmation du mot de passe" style="font-size: 18px;"></div><button class="btn btn-primary btn-block shadow-lg"
+style="height: 60px;padding-bottom: 11px;margin-top: 55px;box-shadow: 20px 38px 34px -26px;background-color: #517ca3;font-size: 20px;margin-bottom: 10px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);"
+type="submit">Changer le Mot de Passe</button>
+</form>
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+  </div>
+  <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;"
+      placeholder="Email">
+    <label style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+  <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

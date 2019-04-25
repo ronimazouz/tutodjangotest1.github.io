@@ -1,0 +1,48 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+    <h1 class="text-center page-title">Details du Tuto</h1>
+    <p class="text-center" id="paragraph-details-tuto" style="color: rgb(255,255,255);font-size: 25px;margin-bottom: 30px;">Le&nbsp;<span>{{ tuto_date }},</span><span>&nbsp;{{ first_name }}</span><span>&nbsp;a suivi un tuto d'une durée de&nbsp;</span><span>{{ tuto_mins}}</span><span>&nbsp;en {{ topic }}</span><span>&nbsp;avec {{ tutor_first_name }}</span></p>
+    <div style="text-align: center;"><button class="btn btn-primary" type="button" style="height: 60px;font-size: 20px;font-weight: 100;">Revoir ce Tuto</button></div>
+    <div id="div-report-problem"><a data-toggle="modal" style="font-weight: 200;font-size: 16px;" href="#modal-report-problem">Signaler un problème avec ce tuto</a></div>
+    <div id="div-accueil"><button class="btn btn-primary shadow" id="bouton-accueil" onclick=location.href="{% url 'kid_account' %}" ; type="button">Retour</button></div>
+</div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-report-problem">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: rgb(10,65,88);">Signaler un problème</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                    <label
+                        style="color: rgb(10,65,88);">Sujet: &nbsp;</label><span style="color: rgb(10,65,88);border-bottom: solid 1px rgb(10,65,88);">Problème avec le tuto du {tuto-date, avec {tutor-first-name}</span><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+                <div
+                    class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button" data-target="#modal-message-thank-you" data-toggle="modal">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-message-thank-you">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmation d'envoi</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>Merci pour votre message, nous y répondrons dans les plus brefs delais.</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" type="button">Fermer</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email" style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+                    <label
+                        style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+                <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i class="fa fa-send"></i></button></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

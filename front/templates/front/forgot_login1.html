@@ -1,0 +1,12 @@
+<!-- TODO add onclick function to go to forgot_login_tutor2 and to send email for password change -->
+
+
+{% extends "front/base.html" %}
+
+{% block content %}
+<form method="post" class="register-form" style="text-align: center;">
+  {% csrf_token %}
+    <h2 class="text-center" style="padding-bottom: 30px;">Mot de Passe Oublié<br></h2>
+    <p class="text-center" id="paragraph-Subscription-Confirmation" style="font-size: 16px;margin-bottom: 30px;">Veuillez fournir votre adresse mail</p>
+    <div class="form-group" style="font-size: 35px;"><input class="form-control" type="email" name="email" placeholder="Email"></div><button class="btn btn-primary btn-block shadow-lg" type="submit" style="height: 60px;padding-bottom: 11px;margin-top: 55px;box-shadow: 20px 38px 34px -26px;background-color: #517ca3;font-size: 20px;margin-bottom: 10px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);">Réinitialiser</button></form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "front/base_nomenu.html" %}
+
+{% block content %}
+<div>
+    <form id="form-login" class="register-form">
+        <h2 class="text-center" id="heading-confirmation">Confirmation d'inscription</h2>
+        <h4 class="text-center" id="bienvenue" style="padding-top: 0px;"><br>Bienvenue sur&nbsp;<img src="{% static '/img/logo.png' %}" style="width: 200px;"></h4>
+        <p class="text-center" id="paragraph-Subscription-Confirmation" style="font-size: 16px;margin-bottom: 50px;"><br>Nous allons revoir votre dossier de candidature et vous contacterons par mail ou téléphone dans les plus brefs delais pour la suite.<br><br>Merci!</p><button class="btn btn-primary" id="bouton-confirmation" style="width: 255px;height: 60px;font-size: 25px;background-color: #517ca3;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);"
+            type="button">Accueil</button></form>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "front/base.html" %}
+
+{% block content %}
+<div>
+  <form method="post" class="register-form">
+    {% csrf_token %}
+    <h2 class="text-center form-heading">Créez votre compte Tuteur (3/3)<br></h2>
+    <h2 class="text-center form-subheading">Votre Entreprise<br></h2><label class="form-label">Nom de votre Entreprise</label><input class="form-control form-input" type="text" inputmode="latin-name"><label class="form-label">Forme
+      Juridique</label><select class="form-control form-input">
+      <optgroup label="">
+        <option value="">Je n'ai pas d'entreprise</option>
+        <option value="">Entreprise Individuelle</option>
+        <option value="">EIRL</option>
+        <option value="">EURL</option>
+        <option value="">SARL</option>
+        <option value="">SAS</option>
+        <option value="">SASU</option>
+      </optgroup>
+    </select>
+    <label class="form-label">Adresse de l'Entreprise</label><input class="form-control form-input" type="text"><label class="form-label">Code Postal</label><input class="form-control form-input" type="text" inputmode="numeric"><label
+      class="form-label">Ville</label>
+    <input class="form-control form-input" type="text" inputmode="latin-name"><label class="form-label"></label><label class="form-label">Numéro de SIRET</label><input class="form-control form-input" type="tel">
+    <div id="Submit-buttons" class="div-2buttons" style="height: 52px;text-align: center;margin-top: 30px;"><button class="btn btn-primary" type="button" id="Button-Ajouter" onclick=location.href="{% url 'subscription_confirmation_tutor' %}" ;
+          style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px;text-align: center;float: none;line-height: 25px;">Soumettre</button></div>
+  </form>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email"
+            style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+          <label style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i
+              class="fa fa-send"></i></button></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

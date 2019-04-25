@@ -1,0 +1,31 @@
+<!-- TODO add onclick function to go to forgot_login_tutor2 and to send email for password change -->
+
+{% extends "front/base.html" %}
+
+{% block content %}
+
+<div>
+  <form class="register-form" style="text-align: center;" method="post">
+    {% csrf_token %}
+    <h2 class="text-center" style="padding-bottom: 30px;">Mot de Passe Oublié<br></h2>
+    <p class="text-center" id="paragraph-Subscription-Confirmation" style="font-size: 16px;margin-bottom: 30px;">Veuillez fournir votre adresse mail</p>
+    <div class="form-group" style="font-size: 35px;"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+    <button class="btn btn-primary btn-block shadow-lg" style="height: 60px;padding-bottom: 11px;margin-top: 55px;box-shadow: 20px 38px 34px -26px;background-color: #517ca3;font-size: 20px;margin-bottom: 10px;-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);"
+      type="button">Réinitialiser</button>
+  </form>
+  <div class="modal fade" role="dialog" tabindex="-1" id="modal-contact-us">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: rgb(10,65,88);">Contactez-nous</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Nom"><input type="text" style="width: 100%;margin-bottom: 15px;" placeholder="Prénom"><input type="email"
+            style="width: 100%;margin-bottom: 60px;" placeholder="Email">
+          <label style="color: rgb(10,65,88);">Sujet: &nbsp;</label><input type="text" style="width: 87%;float: right;"><label style="color: rgb(10,65,88);width: 100%;margin-top: 10px;">Message: &nbsp;</label><textarea></textarea></div>
+        <div class="modal-footer"><button class="btn btn-light" data-dismiss="modal" style="color: white;" type="button">Fermer</button><button class="btn btn-primary" id="bouton-envoyer" type="button">Envoyer &nbsp;<i
+              class="fa fa-send"></i></button></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

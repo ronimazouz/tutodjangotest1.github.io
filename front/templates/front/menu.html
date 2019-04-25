@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+<div class="row" id="row-navbar">
+        <div class="col">
+            <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-logged-in navbar-overlay" style="/*padding-right: 0px;*/">
+                <div class="container-fluid"><a class="navbar-brand" style="color: rgb(255,255,255);font-family: Adamina, serif;font-size: 20px;"><i class="icon ion-ios-arrow-back" id="icon-back" style="color: white;font-size: 30px;"></i>&nbsp; Tuto Academy</a><button data-toggle="collapse"
+                        class="navbar-toggler" data-target="#navcol-1" style="position: static;float: right;padding-bottom: 0px;padding-right: 0px;"><span class="navbar-toggler-icon"><i class="icon ion-navicon-round"></i></span></button>
+                    <div class="collapse navbar-collapse"
+                        id="navcol-1" style="margin-left: 100px;">
+                        <ul class="nav navbar-nav ml-auto nav-effect" style="font-family: 'Lato';">
+                            <li class="nav-item d-xl-flex align-items-xl-start" role="presentation"><a class="nav-link" href="{% url 'choose_kid_name' %}">Demander un Tuto<i class="fas fa-user-graduate" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'my_account' %}">Mon Compte<i class="fas fa-address-card" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="kid_account.html">kid-name<i class="fa fa-odnoklassniki" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="kid_account.html">kid-name<i class="fa fa-odnoklassniki" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'add_kid' %}">Ajouter un&nbsp;élève<i class="fa fa-user-plus" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'payment_page' %}"><i class="fas fa-plus-circle" id="menu-icon"></i>&nbsp;Ajouter des minutes</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" href="#modal-contact-us">Contact<i class="fa fa-envelope" id="menu-icon"></i></a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" id="link-connexion" href="{% url 'login' %}">Déconnexion &nbsp;<i class="fa fa-power-off" id="menu-icon-on"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>

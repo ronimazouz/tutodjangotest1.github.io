@@ -1,0 +1,51 @@
+{% load staticfiles %}
+
+{% load bootstrap4 %}
+{% bootstrap_messages %}
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Tuto</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+   <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/material-icons.min.css' %}">
+   <link rel="stylesheet" href="{% static 'fonts/simple-line-icons.min.css' %}">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cagliostro">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cantarell">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+   <link rel="stylesheet" href="{% static 'css/background.css' %}">
+   <link rel="stylesheet" href="{% static 'css/betternav.css' %}">
+   <link rel="stylesheet" href="{% static 'css/checkbox.css' %}">
+   <link rel="stylesheet" href="{% static 'css/contact-form.css' %}">
+   <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+   <link rel="stylesheet" href="{% static 'css/hover.css' %}">
+   <link rel="stylesheet" href="{% static 'css/payment_form.css' %}">
+   <link rel="stylesheet" href="{% static 'css/photo_upload.css' %}">
+   <link rel="stylesheet" href="{% static 'css/rating_system.css' %}">
+   <link rel="stylesheet" href="{% static 'css/toggle_switch.css' %}">
+   <link rel="stylesheet" href="{% static 'css/website.css' %}">
+</head>
+    <body>
+        {% include "front/background.html" %}
+        {% block content %}{% endblock %}
+
+          <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          <script src="{% static 'js/betternav.js' %}"></script>
+          <script src="{% static 'js/full-screen.js' %}"></script>
+          <script src="{% static 'js/photo_upload.js' %}"></script>
+          <script src="{% static 'js/rating_star.js' %}"></script>
+          <script src="{% static 'js/list.js' %}"></script>
+
+    </body>
+</html>
